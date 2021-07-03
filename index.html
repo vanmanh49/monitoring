@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <title>Monitoring</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow: hidden;
+      font-family: monospace;
+    }
+
+    .main-container {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      min-height: 100vh;
+      min-width: 100vw;
+      padding: 10px;
+      align-items: center;
+      justify-items: stretch;
+      align-content: center;
+    }
+
+    .statistic {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+    }
+
+    .memory-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .fas {
+      font-size: larger;
+      margin-right: 10px;
+      color: cadetblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="statistic">
+      <i class="fas fa-memory" aria-label="RAM"></i>
+      <div class="memory-group">
+        <div>Free: <span id="memory-free"></span></div>
+        <div>Total: <span id="memory-total"></span></div>
+      </div>
+    </div>
+    <div class="statistic">
+      <i class="fas fa-microchip" aria-label="CPU"></i> <span id="cpu-info"></span>
+    </div>
+  </div>
+  <script>
+    require('./renderer.js')
+  </script>
+</body>
+
+</html>
